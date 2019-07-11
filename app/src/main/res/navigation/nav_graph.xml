@@ -5,7 +5,7 @@
             app:startDestination="@id/postFragment">
 
     <fragment android:id="@+id/postFragment"
-              android:name="com.example.nw_android_challenge.PostFragment"
+              android:name="com.example.nw_android_challenge.ui.mainpost.PostFragment"
               android:label="post_fragment"
-              tools:layout="@layout/post_fragment"/>
+              tools:layout="@layout/fragment_post"/>
 </navigation>
