@@ -22,14 +22,14 @@ interface RedditRepository {
         private val uiScope = CoroutineScope(Dispatchers.Main + mainJob)
 
         override fun getPost(success: (stores: List<Post>) -> Unit, error: (failure: Failure) -> Unit) {
-            when(networkHandler.isConnected) {
-                true -> uiScope.launch {
-                    service.getPost(
-                        success = { success(it.dataList) },
-                        error = { error(it) }
-                    )
-                }
-            }
+//            when(networkHandler.isConnected) {
+//                true -> uiScope.launch {
+//                    service.getPost(
+//                        success = { success(it.dataList) },
+//                        error = { error(it) }
+//                    )
+//                }
+//            }
         }
 
         override fun cancelJob() = mainJob.cancel()

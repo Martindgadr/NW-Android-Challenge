@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
     implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingLibrary"
 
     // Dagger
     implementation "com.google.dagger:dagger:$project.daggerVersion"

@@ -37,5 +37,6 @@ ext{
     retrofitVersion = "2.3.0"
     okhttpLogginInterceptorVersion = "3.8.1"
     glide = "4.9.0"
+    pagingLibrary = "2.1.0"
 }
 

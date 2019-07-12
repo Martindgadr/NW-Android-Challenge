@@ -1,10 +1,19 @@
 package com.example.nw_android_challenge.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Post(
-    val title: String? = null,
-    val author_fullname: String? = null,
-    val thumbnail: String? = null,
-    val created: Long? = null,
-    val comments: Int, // TODO see where get this
+    @SerializedName("name")
+    val name: String?,
+    @SerializedName("title")
+    val title: String?,
+    @SerializedName("thumbnail")
+    val imageUrl: String?,
+    @SerializedName("author_fullname")
+    val author: String?,
+    @SerializedName("num_comments")
+    val comment: Int?,
+    @SerializedName("created")
+    val createdDate: Long?,
     val postRead: Boolean
 )

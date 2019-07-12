@@ -7,12 +7,18 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RedditService @Inject constructor(retrofit: Retrofit) {
+class RedditService @Inject constructor(
+    private val retrofit: Retrofit
+) {
     private val redditApi by lazy { retrofit.create(ApiService::class.java) }
 
-    suspend fun getPost(success: (stores: PostDataDto) -> Unit, error: (failure: Failure) -> Unit) {
+    suspend fun getPost(loadSize: Int,
+                        after: String,
+                        before: String,
+                        success: (stores: PostDataDto) -> Unit,
+                        error: (failure: Failure) -> Unit) {
         try {
-            val response = redditApi.getRedditPost()
+            val response = redditApi.getRedditPost(loadSize, after, before)
             if (response.isSuccessful) {
                 response.body()?.let{
                     success(it)

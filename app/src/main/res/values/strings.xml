@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">nw-android-challenge</string>
+    <string name="contDesc">Image from user post</string>
 </resources>
