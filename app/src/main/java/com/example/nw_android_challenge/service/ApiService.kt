@@ -1,5 +1,6 @@
 package com.example.nw_android_challenge.service
 
+import com.example.nw_android_challenge.data.dto.ApiResponse
 import com.example.nw_android_challenge.data.dto.PostDataDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,5 +17,5 @@ interface ApiService {
         @Query("limit") loadSize: Int = 10,
         @Query("after") after: String? = null,
         @Query("before") before: String? = null
-    ): Response<PostDataDto>
+    ): Response<ApiResponse>
 }
