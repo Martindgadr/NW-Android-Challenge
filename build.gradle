@@ -34,7 +34,7 @@ ext{
     databindingAnnotationVersion = '3.1.4'
     fragmentVersion = '1.1.0-rc01'
     daggerVersion = '2.21'
-    retrofitVersion = "2.3.0"
+    retrofitVersion = "2.6.0"
     okhttpLogginInterceptorVersion = "3.8.1"
     glide = "4.9.0"
     pagingLibrary = "2.1.0"

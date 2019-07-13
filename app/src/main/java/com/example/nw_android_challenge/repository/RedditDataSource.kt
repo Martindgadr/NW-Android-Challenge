@@ -24,11 +24,11 @@ class RedditDataSource @Inject constructor (
             true -> uiScope.launch {
                 service.getPost(
                     loadSize = params.requestedLoadSize,
-                    after = "",
-                    before = "",
-                    success = {
+                    after = null,
+                    before = null,
+                    success = { it ->
                         success(it.children)
-                        callback.onResult(it.children, it.before, it.after)
+                        callback.onResult(it.children.map { it.data }, it.before, it.after)
                     },
                     error = {
                         Log.e("Error GET", "Error gatting data from back")
@@ -44,10 +44,10 @@ class RedditDataSource @Inject constructor (
                 service.getPost(
                     loadSize = params.requestedLoadSize,
                     after = params.key,
-                    before = "",
-                    success = {
+                    before = null,
+                    success = { it ->
                         success(it.children)
-                        callback.onResult(it.children, it.after)
+                        callback.onResult(it.children.map { it.data }, it.after)
                     },
                     error = {
                         Log.e("Error GET", "Error gatting data from back")
@@ -62,11 +62,11 @@ class RedditDataSource @Inject constructor (
             true -> uiScope.launch {
                 service.getPost(
                     loadSize = params.requestedLoadSize,
-                    after = "",
+                    after = null,
                     before = params.key,
-                    success = {
+                    success = { it ->
                         success(it.children)
-                        callback.onResult(it.children, it.after)
+                        callback.onResult(it.children.map { it.data }, it.after)
                     },
                     error = {
                         Log.e("Error GET", "Error gatting data from back")
