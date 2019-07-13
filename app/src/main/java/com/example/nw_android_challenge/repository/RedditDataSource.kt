@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Response.success
 import javax.inject.Inject
 
-class RedditDataSource @Inject constructor(
+class RedditDataSource @Inject constructor (
     private val networkHandler: NetworkHandler,
     private val service: RedditService
 ): PageKeyedDataSource<String, Post>() {
@@ -75,4 +75,6 @@ class RedditDataSource @Inject constructor(
             }
         }
     }
+
+    fun cancelJob() = mainJob.cancel()
 }

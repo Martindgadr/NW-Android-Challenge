@@ -13,7 +13,6 @@ class PostAdapter: PagedListAdapter<Post, PostViewHolder>(DiffUtilCallBack()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder =
         PostViewHolder(parent.inflate(R.layout.item_post_cardview))
 
-    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-
-    }
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) =
+        holder.bind(getItem(position), onClickAction)
 }
